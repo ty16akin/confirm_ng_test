@@ -66,7 +66,7 @@ public class UsersAPITest {
         // Set a Map object, to insert data to the request body for the Post request
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("username", "Dotun");
-        requestBody.put("email", "akinlabidotun73gmail.com");
+        requestBody.put("email", "akinlabidotunmail.com");
 
         // Sends a POST request and save the response
         Response response = given().contentType(ContentType.JSON).body(requestBody)
@@ -80,7 +80,7 @@ public class UsersAPITest {
         // Validate that the status code is 400
         response.then().statusCode(200);
         // Validate a specific field value in the response
-        Assert.assertEquals(response.getStatusCode(), 200, "Response code mismatch");
+        Assert.assertEquals(response.getStatusCode(), 400, "Response code mismatch");
     }
 
     @Test
